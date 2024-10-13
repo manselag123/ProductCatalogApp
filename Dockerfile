@@ -6,6 +6,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+COPY ["ProductCatalog.API/appsettings.json", "/app/appsettings.json"]
 COPY ["ProductCatalog.API/ProductCatalog.API.csproj", "ProductCatalog.API/"]
 COPY ["ProductCatalog.Application/ProductCatalog.Application.csproj", "ProductCatalog.Application/"]
 COPY ["ProductCatalog.Domain/ProductCatalog.Domain.csproj", "ProductCatalog.Domain/"]
